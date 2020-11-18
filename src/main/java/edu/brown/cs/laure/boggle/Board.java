@@ -121,6 +121,13 @@ public class Board {
     char letter = line.get(c);
     return letter == 'q' ? "qu" : Character.toString(letter);
   }
+  
+  
+  public boolean isWord(String str) {
+    
+    if (OSPD.contains(str))
+   
+  }
 
 
   /**
@@ -134,45 +141,9 @@ public class Board {
   public Set<String> play() {
     Set<String> all = new TreeSet<>();
 
-    for (List<Character> row : spots) {
-      horizontal(row);
-      vertical(row);
-      diagonal(row);
-    }
-
     return all;
-  }
-
-  public Set<String> horizontal(List<Character> row) {
-
-    String word = "";
-    Set<String> set = new TreeSet<>();
-    int tracker = 0;
-
-    for (Character startingC : row) {
-      word = startingC + word;
-      for (int j = tracker + 1; j < row.size(); j++) {
-        word = word + row.get(j);
-        if (OSPD.contains(word)) {
-          set.add(word);
-        }
-      }
-      word = "";
-      tracker += 1;
-    }
-    return set;
-  }
-
-  public Set<String> vertical(List<Character> row) {
-
-  }
-
-  public Set<String> diagonal(List<Character> row) {
-
-  }
-
-
-
+  }  
+  
 
   /** Score a word according to standard Boggle rules.
    * @param word The word to be scored. The word is presumed legal.
