@@ -32,6 +32,8 @@ public class Board {
    * Board provides?
    */
   private final List<List<Character>> spots = new ArrayList<>();
+  
+  private Set<String> all = new TreeSet<>();
 
   /**
    * Create a new, random board by rolling the dice in a standard
@@ -140,7 +142,7 @@ public class Board {
    * words, such as "to").
    */
   public Set<String> play() {
-    Set<String> all = new TreeSet<>();
+    
     boolean visited[][] = new boolean[SIZE][SIZE]; 
     str = ""; 
       
