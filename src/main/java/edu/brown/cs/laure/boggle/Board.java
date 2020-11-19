@@ -161,23 +161,9 @@ public class Board {
       
        for (int row = r - 1; row <= r + 1 && row < SIZE; row++) 
           for (int col = c - 1; col <= c + 1 && col < SIZE; col++) 
-              if (row >= 0 && col >= 0 && !visited[row][col]) 
-                  findWordsUtil(visited, row, col, str); 
-      
-      if (isPrefix(str)) {
-        findWordsUntil(visited, 
-      
-      
-      
-      
-      
-      
-      
-      
-      
-      
+              if (row >= 0 && col >= 0 && !visited[row][col] && isPrefix(str)) 
+                  findWordsUntil(visited, row, col, str); 
     }
-
 
     return all;
   }  
