@@ -124,10 +124,13 @@ public class Board {
   
   
   public boolean isWord(String str) {
-    
-    if (OSPD.contains(str))
-   
+    if (OSPD.contains(str));
   }
+  
+  public boolean isPrefix(String str) {
+    if (OSPD.containsPrefix(str));
+  }
+    
 
 
   /**
