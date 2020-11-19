@@ -145,11 +145,38 @@ public class Board {
     str = ""; 
       
     for (int r = 0; r < SIZE; r++) 
-            for (int c = 0; c < SIZE; c++) 
-                findWordsUntil(visited[][], r, c, str); 
-    } 
+        for (int c = 0; c < SIZE; c++) 
+            findWordsUntil(visited[][], r, c, str);
     
     public static void findWordsUntil(boolean visited[][], int r, int c, String str) {
+      
+      // mark cell as visited
+      visited[r][c] = true;
+      // add current character to string
+      str = str + spots[r][c];
+      
+      if (isWord(str)) {
+        all.add(str);
+      }
+      
+       for (int row = r - 1; row <= r + 1 && row < SIZE; row++) 
+          for (int col = c - 1; col <= c + 1 && col < SIZE; col++) 
+              if (row >= 0 && col >= 0 && !visited[row][col]) 
+                  findWordsUtil(visited, row, col, str); 
+      
+      if (isPrefix(str)) {
+        findWordsUntil(visited, 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+    }
 
 
     return all;
