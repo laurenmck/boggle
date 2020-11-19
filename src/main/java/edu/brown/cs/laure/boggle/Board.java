@@ -130,15 +130,6 @@ public class Board {
   public boolean isPrefix(String str) {
     if (OSPD.containsPrefix(str));
   }
-  
-  public static void findWordsUntil(boolean visited[][], int r, int c, String str) {
-    
-    
-    
-    
-    
-    
-
 
   /**
    * Find all words that can found in this Board according to boggle
@@ -150,6 +141,16 @@ public class Board {
    */
   public Set<String> play() {
     Set<String> all = new TreeSet<>();
+    boolean visited[][] = new boolean[SIZE][SIZE]; 
+    str = ""; 
+      
+    for (int r = 0; r < SIZE; r++) 
+            for (int c = 0; c < SIZE; c++) 
+                findWordsUntil(visited[][], r, c, str); 
+    } 
+    
+    public static void findWordsUntil(boolean visited[][], int r, int c, String str) {
+
 
     return all;
   }  
